@@ -23,8 +23,8 @@ const getFirstChar = (theWord) => {
     }
 
     let objRes = {"firstChar": first, "index": index}
-    console.log("------------->objRes set as:")
-    console.table(objRes)
+    // console.log("------------->objRes set as:")
+    // console.table(objRes)
     return objRes
 }
 
@@ -56,25 +56,25 @@ try{
                 innerLoop:
                 for(let p = 0; p < (curVerb.length); p++)
                 {
-                    console.log("Loops i/o/p: ["+i+"/"+o+"/"+p+"], Word/Verb: ["+curVerb+"/"+wordRef+"], WordCha/RefCha: ["+wordRef[p]+"/"+curVerb[p]+"]")
+                    // console.log("Loops i/o/p: ["+i+"/"+o+"/"+p+"], Word/Verb: ["+curVerb+"/"+wordRef+"], WordCha/RefCha: ["+wordRef[p]+"/"+curVerb[p]+"]")
                     
                     //first, check index p is not greate than the length of the word or verb
                     if(p >= curVerb.length || p >= wordRef.length)
                     {
-                        console.log("---> INDEX OVERFLOW. BREAKING")
+                        // console.log("---> INDEX OVERFLOW. BREAKING")
                         break
                     }
                     //then, check if characters match. if not, break this loop
                     if(curVerb[p].toLowerCase() != wordRef[p].toLowerCase())
                     {
-                        console.log("---> CHARS DID NOT MATCH. BREAKING")
+                        // console.log("---> CHARS DID NOT MATCH. BREAKING")
                         break
                     }
                     
                     //then, check if end has already been reached OR characters do not match
                     else if((p+1) == curVerb.length && (p+1) >= (wordRef.length-2))
                     {
-                        console.log("--->index was length of word AND greater than wordlength-2. PUSHING AND BREAKING")
+                        // console.log("--->index was length of word AND greater than wordlength-2. PUSHING AND BREAKING")
                         ar_matchedVerbs.push({"originalWord":wordRef, "matchedWord":curVerb, "iIndex":i, "oIndex":o, "pIndex": p})
                         break middleLoop
                     }
@@ -86,7 +86,7 @@ try{
                     
                     else
                     {
-                        console.log("--->SoMe OtHeR CoNdItIoN")
+                        // console.log("--->SoMe OtHeR CoNdItIoN")
                         break
                     }
                 }
