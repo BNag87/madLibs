@@ -1,11 +1,17 @@
-const ar_Verbs = require("./verbs.js");
+const imp_types = require("./types.js"); //access all verbs
 
 let str_storyTitle = "The Magic Tree";
-let str_story = "Damages the nail and kill the stupid jam";
+let str_story = "Damages the black nail and kill the stupid misty jam";
 
 let ar_story = str_story.split(/([_\W])/);
 let ar_alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-let ar_matchedVerbs = [];
+let ar_type = 0; //changes the index of which reference array to use (for verbs, adjectives etc)
+
+let obj_matchedTypes = {"matchVer":[], "matchAdj": []}; //object that stores all matched word types from a function. 
+let obj_types = {"verbRefs":imp_types.ar_REF_verbs, "adjRefs": imp_types.ar_REF_Adjectives};
+
+let typesKeys = Object.keys(obj_types);
+let matchKeys = Object.keys(obj_matchedTypes);
 
 //this returns the first character of a string and its alphabet index as an object
 const getFirstChar = (theWord) => {
@@ -28,30 +34,41 @@ const getFirstChar = (theWord) => {
     return objRes
 }
 
-const findVerbs = (inputArray) => {
+const findVerbs = (inputArray, typeChoice) => {
 
 try{
+console.log("On entry to findVerbs, typeChoice was "+typeChoice)
     //FOR EVERY ENTRY IN THE AR_STORY ARRAY...
     topLoop:
     for(let i = 0; i < inputArray.length; i++) 
         {
             //get the first word...
             let wordRef = inputArray[i];
-            
-            if(wordRef == "," || wordRef == "!" || wordRef == "?" || wordRef == "." || wordRef == " " || !wordRef)
+console.log("On loop: ["+i+"], current word is " +wordRef)
+
+            if(/[^a-zA-Z0-9\s]/.test(wordRef))
             {
-                continue //if punctuation, whitespace or null is found, skip this loop
+                continue //if punctuation or a number is found, skip this loop
             }
 
             //then select the subarray of verbs to search through (so match it alphabetically)...
-            let targetArray = ar_Verbs.ar_REF_verbs[getFirstChar(wordRef).index];
-            
+            let targetArray = [];
+            switch(typeChoice)
+                {
+                    case 0:
+                        targetArray = obj_types.verbRefs[getFirstChar(wordRef).index]
+                        break
+                    case 1:
+                        targetArray = obj_types.adjRefs[getFirstChar(wordRef).index]
+                        break
+                }
+console.log("\ttargetArray is: "+targetArray)
+
             //now for every entry in the subarray...
             middleLoop:
             for(let o = 0; o < (targetArray.length-1); o++)
             {
                 let curVerb = targetArray[o] //character of word (from outer loop "o")
-
                 //check each character matches the same index as the provided word
                 innerLoop:
                 for(let p = 0; p < (curVerb.length); p++)
@@ -75,7 +92,21 @@ try{
                     else if((p+1) == curVerb.length && (p+1) >= (wordRef.length-2))
                     {
                         // console.log("--->index was length of word AND greater than wordlength-2. PUSHING AND BREAKING")
-                        ar_matchedVerbs.push({"originalWord":wordRef, "matchedWord":curVerb, "iIndex":i, "oIndex":o, "pIndex": p})
+                        let chosenMatchAR = [];
+                        switch(typeChoice)
+                        {
+                            case 0:
+                                chosenMatchAR = obj_matchedTypes.matchVer
+                                break;
+                            case 1:
+                                chosenMatchAR = obj_matchedTypes.matchAdj
+                                break;
+                        }
+                        result = {"originalWord":wordRef, "matchedWord":curVerb, "iIndex":i, "typeChoice":typeChoice}
+                        chosenMatchAR.push(result)
+console.log("------\n\tResult generated as: ")
+console.log(result)                       
+console.log("-----") 
                         break middleLoop
                     }
 
@@ -100,5 +131,7 @@ try{
         }
 }
 console.table(ar_story)
-findVerbs(ar_story);
-console.table(ar_matchedVerbs)  
+findVerbs(ar_story, 0);
+findVerbs(ar_story, 1);
+console.table(obj_matchedTypes.matchVer)
+console.table(obj_matchedTypes.matchAdj)  
