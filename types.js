@@ -78,5 +78,14 @@ exports.ar_REF_nouns = [
     ["Name", "Nation", "Nature", "Negotiation", "Network", "News", "Newspaper", "Night", "Note", "Nothing", "Number"],
     ["Object", "Obligation", "Office", "Oil", "Operation", "Opinion", "Opportunity", "Orange", "Order", "Organization", "Outcome", "Outside", "Oven", "Owner"],
     ["Page", "Paint", "Painting", "Paper", "Part", "Passenger", "Passion", "Patience", "Payment", "Penalty", "People", "Percentage", "Perception", "Performance", "Period", "Permission", "Person", "Personality", "Perspective", "Philosophy", "Phone", "Photo", "Physics", "Piano", "Picture", "Pie", "Piece", "Pizza", "Place", "Plan", "Platform", "Player", "Poem", "Poet", "Poetry", "Point", "Police", "Policy", "Politics", "Pollution", "Population", "Position", "Possession", "Possibility", "Post", "Pot", "Potato", "Power", "Practice", "Preference", "Preparation", "Presence", "Presentation", "President", "Pressure", "Price", "Priority", "Problem", "Procedure", "Process", "Product", "Profession", "Professor", "Profit", "Program", "Promotion", "Property", "Proposal", "Protection", "Psychology", "Purpose"],
-    [],
-]
+    ["Quality", "Quantity", "Queen", "Question"],
+    ["Radio", "Range", "Rate", "Ratio", "Reaction", "Reality", "Reason", "Reception", "Recipe", "Recognition", "Recommendation", "Record", "Recording", "Reflection", "Refrigerator", "Region", "Relation", "Relationship", "Replacement", "Republic", "Reputation", "Requirement", "Research", "Resolution", "Resource", "Response", "Responsibility", "Restaurant", "Result", "Revenue", "Review", "Revolution", "Risk", "River", "Road", "Rock", "Role", "Room", "Rule"],
+    ["Safety", "Salad", "Salt", "Sample", "Satisfaction", "Scale", "Scene", "School", "Science", "Screen", "Secretary", "Section", "Sector", "Security", "Selection", "Sense", "Series", "Service", "Session", "Setting", "Shape", "Share", "Shirt", "Side", "Sign", "Signature", "Significance", "Singer", "Sir", "Sister", "Site", "Situation", "Size", "Skill", "Society", "Software", "Soil", "Solution", "Son", "Song", "Sound", "Soup", "Source", "Space", "Speaker", "Speech", "Sport", "Square", "Standard", "Star", "State", "Statement", "Steak", "Step", "Stock", "Storage", "Store", "Story", "Stranger", "Strategy", "Stress", "Structure", "Student", "Studio", "Study", "Style", "Subject", "Success", "Suggestion", "Sun", "Supermarket", "Surgery", "Sympathy", "System"],
+    ["Table", "Tale", "Task", "Tax", "Tea", "Teacher", "Technology", "Television", "Temperature", "Tennis", "Tension", "Term", "Test", "Thanks", "Theory", "Thing", "Thought", "Throat", "Time", "Tongue", "Tool", "Tooth", "Top", "Topic", "Town", "Trade", "Tradition", "Trainer", "Training", "Transportation", "Truth", "Two", "Type"],
+    ["Uncle", "Understanding", "Union", "Unit", "University", "User"],
+    ["Value", "Variation", "Variety", "Vehicle", "Version", "Video", "View", "Village", "Virus", "Voice", "Volume"],
+    ["War", "Warning", "Water", "Way", "Weakness", "Wealth", "Weather", "Web", "Wedding", "Week", "While", "Wife", "Wind", "Winner", "Woman", "Wood", "Word", "Work", "Worker", "World", "Writer", "Writing"],
+    ["Xylophone"],
+    ["Year", "Youth"],
+    ["Zone"]
+];
